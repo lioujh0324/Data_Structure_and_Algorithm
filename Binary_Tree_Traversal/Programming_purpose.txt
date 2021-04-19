@@ -1,0 +1,20 @@
+This program was written to implement the traversal of binary tree.
+In my work, the "pre-order" traversal was adopted.
+
+The process of the program is as following :
+    1. Users can input their own binary tree in "level-order" (each label of node was hint by program).
+    2. When the input is finished, the whole binary tree would be printed in "pre-order".
+    3. Finally, the whole tree will be deleted (free) to return the memory to system.
+  
+The motivation to write the program:
+    1. To practice the traversal of binary tree, I wrote the traversal process via pre-order (printing tree), post-order (free tree nodes) and level-order (for user's input).
+    2. Why I chose iteration rather than recursion is purely due to the fact that I wanna practice stack and queue data structure.
+  
+The functions in this work :
+    1. CreateBinaryTree :
+        This function let users input the "key" of specified nodes, and dynamically allocated memory quota to save the left or right child if there is.
+        Due to the input process is in "level-order", it needed a queue structure to enable it.
+    2. Iter_preorder :
+        This function printed the binary tree in pre-order. So I used a stack structure to implement the process.
+    3. FreeTree :
+        After the traversal, this function will free the whole tree. The delete process was in "post-order".
