@@ -1,1 +1,9 @@
+This program was written to implement the heap structure in array.
 
+The process of the program is as following :
+    1. Users can input the elements in the heap by any order.
+    2. The program will rearrange the order of the elements in the heap (in array type) once users finished a input of a node.
+    3. The whole input process will not be terminated until users input an integer which <=0.
+    4. The heap will be printed out in "level-order" (because a heap structure is just a complete binary tree).
+    5. Then, program will let users to modify an arbitrary node.
+    6. Finally, program will printed out the heap after changed (also in "level-order").
