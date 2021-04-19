@@ -2,7 +2,7 @@ This program was written to implement the traversal of binary tree.
 In my work, the "pre-order" traversal was adopted.
 
 The process of the program is as following :
-    1. Users can input their own binary tree in "level-order" (each label of node was hint by program).
+    1. Users can input their own binary tree in "level-order" (each label of node was hinted by program).
     2. When the input is finished, the whole binary tree would be printed in "pre-order".
     3. Finally, the whole tree will be deleted (free) to return the memory to system.
   
