@@ -1,1 +1,25 @@
+This program was written to implement the binary search tree and some operation on it.
 
+The process of the program is as following :
+    1. Users can input their own binary search tree nodes by any order (the binary search tree will automatically generated).
+    2. When the input is finished, the whole binary search tree would be printed in "pre-order".
+    3. Then, user can input a node that he/she wanna delete.
+    4. The binary search tree which has been deleted node will be printed also in "pre-order".
+    4. Finally, the whole tree will be deleted (free) to return the memory to system.
+  
+The motivation to write the program:
+    1. To practice the creation and deletion of binary search tree.
+  
+The functions in this work :
+    1. CreateNode :
+        This function would allocate a memory size which is just a tree node dynamically.
+    2. Insertnode :
+        This function insert a new node to a existed binary search tree.
+    3. treenodeStackPush :
+        Push a tree node into a stack which is used when "pre-order" traversal.
+    4. treenodeStackPop :
+        Pop a tree node from a stack which is used when "pre-order" traversal.
+    5. iter_preorder :
+        The pre-order traversal algorithm in iteration method.
+    6. DeleteNode :
+        This function implement the tree node deletion which assign by user from a binary search tree.
