@@ -18,8 +18,9 @@ void DeleteNode(int, treenode *);
 
 int main(void)
 {
-    treenode rootnode;
-    treenode *root=&rootnode, *currentnode, *newnode;
+    treenode *root;
+    treenode *currentnode, *newnode;
+    root=(treenode *)malloc(sizeof(treenode));
     int deletekey;
     printf("Input the key of root\n");
     scanf("%d", &root->key);
@@ -39,7 +40,8 @@ int main(void)
     printf("Input the key you wanna delete :\n");
     scanf("%d", &deletekey);
     DeleteNode(deletekey, root);
-    iter_preorder(root);
+    if (root)
+        iter_preorder(root);
     
     system("pause");
     return 0;
@@ -118,15 +120,15 @@ void iter_preorder(treenode *root)
         currentnode=currentnode->rightchild;
         else
         {
+            currentnode=stack[top];
             top=treenodeStackPop(top);
-            currentnode=stack[top+1];
         }
     }
     printf("\n");    
 }
 void DeleteNode(int key, treenode *root)
 {
-    treenode *currentnode, *targetnode=NULL;
+    treenode *currentnode, *targetnode=NULL, *temp;
     currentnode=root;
     while (currentnode)
     {
@@ -156,8 +158,9 @@ void DeleteNode(int key, treenode *root)
                 currentnode=currentnode->rightchild;
             }
             targetnode->key=currentnode->rightchild->key;
-            currentnode->rightchild=currentnode->rightchild->leftchild;
+            temp=currentnode->rightchild->leftchild;
             free(currentnode->rightchild);
+            currentnode->rightchild=temp;
         }
     }
     else if (targetnode->rightchild)
@@ -176,8 +179,9 @@ void DeleteNode(int key, treenode *root)
                 currentnode=currentnode->leftchild;
             }
             targetnode->key=currentnode->leftchild->key;
-            currentnode->leftchild=currentnode->leftchild->rightchild;
+            temp=currentnode->leftchild->rightchild;
             free(currentnode->leftchild);
+            currentnode->leftchild=temp;
         }
     }
     else
